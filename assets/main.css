@@ -1,0 +1,84 @@
+@import url("reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+	--eu-blue: #004494;
+	--sky-blue: #63adf2;
+	--cloud-blue: #a7cced;
+	--cloud-gray: #82a0bc;
+	--star-yellow: #edae49;
+	--text-black: #0c120c;
+	--text-white: #eff1f3;
+}
+
+body {
+	padding: 0 5vw;
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-size: 1em;
+	font-style: normal;
+	background-color: var(--sky-blue);
+}
+
+nav {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: var(--eu-blue);
+	padding: 0;
+}
+
+ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 2%;
+}
+
+ul li {
+	color: var(--text-white);
+	margin: 5%;
+	font-weight: 400;
+	transition: font-weight 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+ul li:hover {
+	font-weight: 800;
+}
+
+a {
+	color: var(--text-white);
+}
+
+a,
+u {
+	text-decoration: none;
+}
+
+.register {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+}
+
+.sign-up-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 4%;
+	font-size: 1.2em;
+	background-color: var(--cloud-blue);
+	border-radius: 20px;
+}
+.sign-up-form div {
+	margin: 2% 0;
+}
