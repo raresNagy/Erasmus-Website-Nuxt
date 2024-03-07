@@ -20,6 +20,11 @@
             placeholder="password"
           >
         </div>
+        <div class="submit">
+          <button id="sign-up">
+            Sign Up
+          </button>
+        </div>
       </div>
     </main>
   </div>

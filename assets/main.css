@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-	--eu-blue: #004494;
-	--sky-blue: #63adf2;
-	--cloud-blue: #a7cced;
+	--eu-blue: #033495;
+	--sky-blue: #6a9cfd;
+	--cloud-blue: #8cb0f7;
 	--cloud-gray: #82a0bc;
 	--star-yellow: #edae49;
 	--text-black: #0c120c;
@@ -74,12 +74,18 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+	align-items: center;
 	padding: 4%;
 	font-size: 1.2em;
 	background-color: var(--cloud-blue);
 	border-radius: 20px;
-	box-shadow: rgba(167, 204, 237, 0.75) 0px 5px 15px;
+	box-shadow: #aee4ffbf 0px 10px 30px;
 }
 .sign-up-form div {
 	margin: 2% 0;
+}
+
+.sign-up-form .title {
+	font-weight: 800;
+	font-size: 140%;
 }
