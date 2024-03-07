@@ -78,6 +78,7 @@ main {
 	font-size: 1.2em;
 	background-color: var(--cloud-blue);
 	border-radius: 20px;
+	box-shadow: rgba(167, 204, 237, 0.75) 0px 5px 15px;
 }
 .sign-up-form div {
 	margin: 2% 0;
