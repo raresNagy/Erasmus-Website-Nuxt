@@ -65,8 +65,12 @@
 </template>
 
 <script lang="ts">
+import { insertUser } from '~/server/db/schema'
+import { password } from "bun"
+
 
 const minPasswdLength = 8
+
 
 export default {
   data() {
@@ -80,11 +84,19 @@ export default {
   methods: {
 
     handleSubmit() {
+
       if (!(this.password.length >= minPasswdLength)) {
         this.passwordError = `Password must be at least ${minPasswdLength} characters long`
-        console.error(this.passwordError)
       } else {
         this.passwordError = ''
+      }
+      if (this.passwordError === '') {
+        insertUser({
+          name: "test",
+          email: this.email,
+          country: this.country,
+          passwordHash: password.hashSync(this.password)
+        })
       }
     }
   }

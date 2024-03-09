@@ -12,11 +12,13 @@
     "lint-fix": "eslint . --fix"
   },
   "dependencies": {
+    "@libsql/client": "^0.5.3",
     "@types/better-sqlite3": "^7.6.9",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "better-sqlite3": "^9.4.3",
-    "drizzle-orm": "^0.30.0",
+    "bun": "^1.0.30",
+    "drizzle-orm": "^0.30.1",
     "eslint-plugin-drizzle": "^0.2.3",
     "nuxt": "^3.10.3",
     "vue": "^3.4.19",
@@ -25,6 +27,7 @@
   "devDependencies": {
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxtjs/google-fonts": "latest",
+    "drizzle-kit": "^0.20.14",
     "eslint": "^8.57.0",
     "postcss": "^8.4.35",
     "postcss-cli": "^11.0.0",

@@ -23,5 +23,8 @@ logs
 .env.*
 !.env.example
 
+#dev databases
+*.db*
+
 #vscode
 .vscode
