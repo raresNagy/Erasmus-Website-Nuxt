@@ -4,4 +4,13 @@ export default defineNuxtConfig({
 
 	// Global CSS
 	css: ["~/assets/main.css"],
+
+	modules: ["@nuxtjs/google-fonts"],
+	googleFonts: {
+		families: {
+			Montserrat: {
+				wght: "100..900",
+			},
+		},
+	},
 });

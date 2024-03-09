@@ -1,6 +1,7 @@
 <template>
   <form 
     id="sign-up-form"
+    @submit.prevent="handleSubmit"
   >
     <div class="title">
       Sign up
@@ -21,6 +22,12 @@
         placeholder="password"
         required
       >
+      <div 
+        v-if="passwordError"
+        class="error"
+      >
+        {{ passwordError }}
+      </div>
     </div>
     <select
       id="country"
@@ -59,14 +66,29 @@
 
 <script lang="ts">
 
+const minPasswdLength = 8
+
 export default {
   data() {
     return {
       email: '',
       password: '',
-      country: ''
+      country: '',
+      passwordError: ''
+    }
+  },
+  methods: {
+
+    handleSubmit() {
+      if (!(this.password.length >= minPasswdLength)) {
+        this.passwordError = `Password must be at least ${minPasswdLength} characters long`
+        console.error(this.passwordError)
+      } else {
+        this.passwordError = ''
+      }
     }
   }
+
 }
 
 </script>
@@ -96,6 +118,7 @@ main {
   background-color: var(--cloud-blue);
   border-radius: 20px;
   box-shadow: #aee4ffbf 0px 10px 30px;
+
 }
 
 .sign-up-form div {
@@ -115,5 +138,11 @@ main {
 label,
 input {
   margin: 3% 1%;
+}
+
+.error {
+  font-size: .6em;
+  color: red;
+  font-weight: bold;
 }
 </style>
