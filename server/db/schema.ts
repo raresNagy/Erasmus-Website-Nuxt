@@ -4,6 +4,7 @@ import { sqliteTable, integer, text } from "drizzle-orm/sqlite-core";
 export const users = sqliteTable("users", {
 	id: integer("id").primaryKey().notNull(),
 	name: text("name").notNull(),
+	country: text("country").notNull(),
 	passwordHash: text("passwordHash", { length: 64 }).notNull().unique(),
 });
 
@@ -25,9 +26,3 @@ import Database from "better-sqlite3";
 
 const sqlite = new Database("sqlite.db");
 const db = drizzle(sqlite);
-
-const result: User[] = db.select().from(users).all();
-
-const insertUser = (user: InsertUser) => {
-	return db.insert(users).values(user).run();
-};
