@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
 	devtools: { enabled: true },
 
+	typescript: { includeWorkspace: true },
+
 	// Global CSS
 	css: ["~/assets/main.css"],
 
