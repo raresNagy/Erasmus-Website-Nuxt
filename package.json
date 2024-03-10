@@ -12,10 +12,7 @@
     "lint-fix": "eslint . --fix"
   },
   "dependencies": {
-    "@libsql/client": "^0.5.3",
-    "@types/better-sqlite3": "^7.6.9",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
+    "bcrypt": "^5.1.1",
     "better-sqlite3": "^9.4.3",
     "bun": "^1.0.30",
     "drizzle-orm": "^0.30.1",
@@ -25,6 +22,11 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@libsql/client": "^0.5.3",
+    "@types/bcrypt": "^5.0.2",
+    "@types/better-sqlite3": "^7.6.9",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
     "@nuxt/eslint-config": "^0.2.0",
     "@nuxtjs/google-fonts": "latest",
     "drizzle-kit": "^0.20.14",
