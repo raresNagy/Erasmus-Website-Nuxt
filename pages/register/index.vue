@@ -2,7 +2,7 @@
   <div>
     <AppHeader />
     <main>
-      <SignupForm />
+      <SignupForm />    
     </main>
   </div>
 </template>

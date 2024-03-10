@@ -63,11 +63,6 @@
       </button>
     </div>
   </form>
-  <div>
-    Email: {{ email }}
-    <br>
-    Password: {{ password }}
-  </div>
 </template>
 
 <script lang="ts">
