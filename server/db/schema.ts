@@ -21,13 +21,3 @@ export const challenges = sqliteTable("challeges", {
 
 export type User = typeof users.$inferSelect; // return type when queried
 export type InsertUser = typeof users.$inferInsert; // insert type
-
-import { drizzle } from "drizzle-orm/better-sqlite3";
-import Database from "better-sqlite3";
-
-const sqlite = new Database("sqlite.db");
-const db = drizzle(sqlite);
-
-export const insertUser = (user: InsertUser) => {
-	return db.insert(users).values(user).run();
-};

@@ -11,21 +11,19 @@
       <input
         v-model="email"
         type="email"
-        placeholder="email"
+        placeholder=""
         required
       >
     </div>
     <div class="input-container">
       <label>Password</label>
       <input
+        v-model="password"
         type="password"
-        placeholder="password"
+        placeholder=""
         required
       >
-      <div 
-        v-if="passwordError"
-        class="error"
-      >
+      <div class="error">
         {{ passwordError }}
       </div>
     </div>
@@ -57,20 +55,26 @@
       </option>
     </select>
     <div class="submit">
-      <button id="sign-up">
+      <button
+        id="sign-up"
+        @submit="handleSubmit"
+      >
         Sign Up
       </button>
     </div>
   </form>
+  <div>
+    Email: {{ email }}
+    <br>
+    Password: {{ password }}
+  </div>
 </template>
 
 <script lang="ts">
-import { insertUser } from '~/server/db/schema'
-import { password } from "bun"
 
+import { createUser } from '~/server/actions'
 
 const minPasswdLength = 8
-
 
 export default {
   data() {
@@ -85,17 +89,18 @@ export default {
 
     handleSubmit() {
 
-      if (!(this.password.length >= minPasswdLength)) {
+      if (this.password.length <= minPasswdLength) {
+        console.log(this.passwordError)
         this.passwordError = `Password must be at least ${minPasswdLength} characters long`
-      } else {
-        this.passwordError = ''
       }
-      if (this.passwordError === '') {
-        insertUser({
+      if (this.passwordError) {
+        console.log("user added");
+        createUser({
+          id: 2,
           name: "test",
           email: this.email,
           country: this.country,
-          passwordHash: password.hashSync(this.password)
+          passwordHash: this.password
         })
       }
     }
@@ -121,6 +126,7 @@ main {
 }
 
 #sign-up-form {
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -150,6 +156,14 @@ main {
 label,
 input {
   margin: 3% 1%;
+}
+
+input:valid {
+  color: yellowgreen;
+}
+
+input:invalid {
+  color: orangered;
 }
 
 .error {
