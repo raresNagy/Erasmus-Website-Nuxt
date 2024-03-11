@@ -1,11 +1,23 @@
 <template>
   <nav>
     <ul>
-      <li><a href="./">Home</a></li>
+      <li>
+        <NuxtLink href="./">
+          Home
+        </nuxtlink>
+      </li>
     </ul>
     <ul class="account">
-      <li><a href="">Login</a></li>
-      <li><a href="/register">Register</a></li>
+      <li>
+        <NuxtLink href="">
+          Login
+        </nuxtlink>
+      </li>
+      <li>
+        <NuxtLink href="/register">
+          Register
+        </nuxtlink>
+      </li>
     </ul>
   </nav>
 </template>

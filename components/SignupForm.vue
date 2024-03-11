@@ -114,6 +114,7 @@ export default {
             passwordHash: this.password
           }
         })
+
       }
     }
   }
