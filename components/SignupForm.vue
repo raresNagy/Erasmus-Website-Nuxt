@@ -7,8 +7,18 @@
       Sign up
     </div>
     <div class="input-container">
-      <label>E-mail</label>
+      <label for="name">
+        Full Name
+      </label>
       <input
+        v-model="name"
+        type="text"
+      >
+    </div>
+    <div class="input-container">
+      <label for="email">E-mail</label>
+      <input
+        id="email"
         v-model="email"
         type="email"
         placeholder=""
@@ -18,6 +28,7 @@
     <div class="input-container">
       <label>Password</label>
       <input
+        id="password"
         v-model="password"
         type="password"
         placeholder=""
@@ -67,13 +78,13 @@
 
 <script lang="ts">
 
-import { createUser } from '~/server/actions'
 
 const minPasswdLength = 8
 
 export default {
   data() {
     return {
+      name: '',
       email: '',
       password: '',
       country: '',
@@ -88,14 +99,20 @@ export default {
         console.log(this.passwordError)
         this.passwordError = `Password must be at least ${minPasswdLength} characters long`
       }
-      if (this.passwordError) {
+      if (!this.passwordError) {
         console.log("user added");
-        createUser({
-          id: 2,
-          name: "test",
-          email: this.email,
-          country: this.country,
-          passwordHash: this.password
+
+        $fetch('/api/registerUser', {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          method: 'POST',
+          body: {
+            name: this.name,
+            email: this.email,
+            country: this.country,
+            passwordHash: this.password
+          }
         })
       }
     }
