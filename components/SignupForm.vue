@@ -34,8 +34,27 @@
         placeholder=""
         required
       >
-      <div class="error">
-        {{ passwordError }}
+      <div
+        v-if="passwordLengthError"
+        class="error"
+      >
+        {{ passwordLengthError }}
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="confirm-password"> Confirm password </label>
+      <input 
+        id="confirm-password"
+        v-model="confirm_password"
+        type="password"
+        name="confirm-password"
+      >
+      <div 
+        
+        v-if="passwordConfirmationError" 
+        class="error"
+      >
+        {{ passwordConfirmationError }}
       </div>
     </div>
     <select
@@ -46,7 +65,7 @@
       form="sign-up-form"
       required
     >
-      <option 
+      <option
         value=""
         selected
       >
@@ -87,22 +106,25 @@ export default {
       name: '',
       email: '',
       password: '',
+      confirm_password: '',
       country: '',
-      passwordError: ''
+      passwordLengthError: '',
+      passwordConfirmationError: ''
     }
   },
   methods: {
 
     handleSubmit() {
 
-      if (this.password.length <= minPasswdLength) {
-        console.log(this.passwordError)
-        this.passwordError = `Password must be at least ${minPasswdLength} characters long`
-      }
-      if (!this.passwordError) {
-        console.log("user added");
-
-        $fetch('/api/registerUser', {
+      if (this.password.length < minPasswdLength) {
+        this.passwordLengthError = `Password must be at least ${minPasswdLength} characters long`
+      } else if (this.password !== this.confirm_password) {
+        this.passwordLengthError = '';
+        this.passwordConfirmationError = `Passwords do not match`;
+        console.log("no match, here's the error: ", this.passwordConfirmationError);
+      } else {
+        this.passwordLengthError = '';
+        $fetch('/api/auth/register', {
           headers: {
             'Content-Type': 'application/json'
           },
