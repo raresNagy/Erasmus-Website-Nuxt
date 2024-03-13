@@ -6,7 +6,7 @@ export const users = sqliteTable("users", {
 	name: text("name").notNull(),
 	email: text("email").notNull().unique(),
 	country: text("country").notNull(),
-	passwordHash: text("passwordHash", { length: 118 }).notNull().unique(),
+	passwordHash: text("passwordHash", { length: 118 }).notNull(),
 });
 
 export const images = sqliteTable("images", {
