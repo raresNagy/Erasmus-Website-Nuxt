@@ -1,5 +1,3 @@
-"use server";
-
 import encryptPassword from "~/server/utils/encryptPassword";
 import { db } from "../../db/index";
 import { userTransformer } from "~/server/transformers/user";

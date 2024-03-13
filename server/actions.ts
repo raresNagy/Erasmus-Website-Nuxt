@@ -1,5 +1,3 @@
-"user server";
-
 import { SQLWrapper, eq } from "drizzle-orm";
 import { db } from "./db/index";
 
@@ -14,6 +12,6 @@ export async function createUser(user: User) {
 	db.insert(users).values(user);
 }
 
-export async function getUserByEmail(email: string) {
-	return await db.select().from(users).where(eq(users.email, email));
-}
+export const getUserByEmail = (email: string | SQLWrapper) => {
+	return db.select().from(users).where(eq(users.email, email));
+};
