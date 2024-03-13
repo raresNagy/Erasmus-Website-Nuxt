@@ -9,7 +9,9 @@
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare",
 		"lint": "eslint .",
-		"lint-fix": "eslint . --fix"
+		"lint-fix": "eslint . --fix",
+		"db:push": "bunx drizzle-kit push:sqlite",
+		"db:studio": "bunx drizzle-kit studio"
 	},
 	"dependencies": {
 		"bcrypt": "^5.1.1",
