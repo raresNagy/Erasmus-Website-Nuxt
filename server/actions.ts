@@ -1,5 +1,6 @@
 "user server";
 
+import { SQLWrapper, eq } from "drizzle-orm";
 import { db } from "./db/index";
 
 import { User, users } from "./db/schema";
@@ -11,4 +12,8 @@ export async function createUser(user: User) {
 	user.passwordHash = hashSync(user.passwordHash, salt);
 
 	db.insert(users).values(user);
+}
+
+export async function getUserByEmail(email: string) {
+	return await db.select().from(users).where(eq(users.email, email));
 }
