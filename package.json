@@ -1,45 +1,45 @@
 {
-	"name": "nuxt-app",
-	"private": true,
-	"type": "module",
-	"scripts": {
-		"build": "nuxt build",
-		"dev": "nuxt dev",
-		"generate": "nuxt generate",
-		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare",
-		"lint": "eslint .",
-		"lint-fix": "eslint . --fix",
-		"db:push": "bunx drizzle-kit push:sqlite",
-		"db:studio": "bunx drizzle-kit studio"
-	},
-	"dependencies": {
-		"bcrypt": "^5.1.1",
-		"better-sqlite3": "^9.4.3",
-		"bun": "^1.0.30",
-		"drizzle-orm": "^0.30.1",
-		"eslint-plugin-drizzle": "^0.2.3",
-		"nuxt": "^3.10.3",
-		"vue": "^3.4.19",
-		"vue-router": "^4.3.0"
-	},
-	"devDependencies": {
-		"@libsql/client": "^0.5.3",
-		"@nuxt/eslint-config": "^0.2.0",
-		"@nuxtjs/google-fonts": "latest",
-		"@types/bcrypt": "^5.0.2",
-		"@types/better-sqlite3": "^7.6.9",
-		"@typescript-eslint/eslint-plugin": "^7.1.1",
-		"@typescript-eslint/parser": "^7.1.1",
-		"drizzle-kit": "^0.20.14",
-		"eslint": "^8.57.0",
-		"nuxi": "latest",
-		"postcss": "^8.4.35",
-		"postcss-cli": "^11.0.0",
-		"stylelint": "^16.2.1",
-		"stylelint-config-standard": "^36.0.0"
-	},
-	"stylelint": {
-		"extends": "stylelint-config-standard"
-	}
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "db:push": "bunx drizzle-kit push:sqlite",
+    "db:studio": "bunx drizzle-kit studio"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^9.4.3",
+    "bun": "^1.0.30",
+    "drizzle-orm": "^0.30.1",
+    "eslint-plugin-drizzle": "^0.2.3",
+    "nuxt": "^3.10.3",
+    "vue": "^3.4.19",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@libsql/client": "^0.5.3",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxtjs/google-fonts": "latest",
+    "@types/bcrypt": "^5.0.2",
+    "@types/better-sqlite3": "^7.6.9",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "drizzle-kit": "^0.20.14",
+    "eslint": "^8.57.0",
+    "nuxi": "latest",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "stylelint": "^16.2.1",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  }
 }
