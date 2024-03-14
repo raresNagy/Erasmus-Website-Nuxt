@@ -23,17 +23,11 @@ export const challenges = sqliteTable("challneges", {
 export const refreshtokens = sqliteTable("refreshtokens", {
 	id: integer("id").notNull().primaryKey({ autoIncrement: true }),
 	token: text("token").unique(),
-	userId: integer("userid").references(() => users.id),
+	userId: integer("userid")
+		.notNull()
+		.references(() => users.id),
 });
 
 export type User = typeof users.$inferSelect; // return type when queried
 export type refreshToken = typeof refreshtokens.$inferSelect;
 export type InsertUser = typeof users.$inferInsert; // insert type
-
-export const usersToTokensRelations = relations(users, ({ one }) => ({
-	refreshtokens: one(users),
-}));
-
-export const tokensToUsersRelations = relations(refreshtokens, ({ one }) => ({
-	users: one(refreshtokens),
-}));
