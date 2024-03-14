@@ -1,5 +1,8 @@
 module.exports = {
     root: true,
-    extends: ['@nuxt/eslint-config'],
+
     plugins: ['drizzle'],
+    extends: ['@nuxt/eslint-config',
+        'plugin:drizzle/recommended'],
+
 }

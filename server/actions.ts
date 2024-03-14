@@ -1,4 +1,4 @@
-import { SQLWrapper, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { db } from "./db/index";
 
 import { User, users } from "./db/schema";
@@ -12,6 +12,6 @@ export async function createUser(user: User) {
 	db.insert(users).values(user);
 }
 
-export const getUserByEmail = (email: string | SQLWrapper) => {
+export const getUserByEmail = (email: string) => {
 	return db.select().from(users).where(eq(users.email, email));
 };
